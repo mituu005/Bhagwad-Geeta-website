@@ -1,35 +1,33 @@
 /* ==========================================================================
-   श्रीमद् भागवत कथा अमृत महोत्सव - सात्विक एवं सरल डिजिटल आमंत्रण पत्रिका
-   SIMPLE, CLEAN, ELEGANT & PEACEFUL HINDU INVITATION CARD THEME
+   श्रीमद् भागवत कथा अमृत महोत्सव - सात्विक, शांत एवं पारंपरिक डिजिटल पत्रिका
+   TRADITIONAL HINDU INVITATION CARD ON WARM IVORY PAPER
    ========================================================================== */
 
 :root {
-  /* Soothing Palette */
-  --bg-page: #FAF7F0;             /* Soothing light beige page background */
-  --bg-card: #FFFDF5;             /* Soft cream / ivory main card */
-  --bg-card-inner: #FFFFFF;       /* Pure clean white for day cards */
-  --bg-pastel-saffron: #F5E6CC;   /* Soft pastel saffron for badges */
-  --bg-soft-peach: #F8E9DF;       /* Gentle soft peach highlight */
-  --bg-accent-soft: #FDF9F0;      /* Subtle cream highlight */
+  /* Warm Ivory & Peaceful Light Palette */
+  --bg-page: #F8F3E8;            /* Calm muted light cream page backdrop */
+  --bg-card: #FFFDF6;            /* Warm authentic ivory cardstock */
+  --bg-card-alt: #FAF6ED;        /* Gentle soft cream section fill */
+  --bg-box: #FFFFFF;             /* Pure soft white for day cards */
+  --bg-badge: #F4ECE1;           /* Very subtle muted beige badge */
+  
+  /* Very Subtle Antique Gold Accents */
+  --gold-antique: #B59A69;       /* Muted, delicate antique gold */
+  --gold-line: #D9CEBA;          /* Soft hairline divider */
+  --gold-faint: rgba(181, 154, 105, 0.22); /* Whisper border */
 
-  /* Muted Gold & Subtle Accents */
-  --gold-muted: #C6A15B;          /* Muted, elegant gold */
-  --gold-subtle: #D8C39B;         /* Gentle soft gold line */
-  --gold-border: #E8DCC4;         /* Very thin delicate border */
-  --gold-dark: #8E6627;           /* Readable golden brown for icons & tags */
-
-  /* Readable Hindi Typography Colors */
-  --text-dark: #3A2012;           /* Deep readable warm brown */
-  --text-muted: #6A4E3D;          /* Soft readable brown for subtext */
-  --text-maroon: #5A1921;         /* Muted deep maroon for sacred headings */
+  /* Readable Dark Brown Hindi Typography */
+  --text-primary: #49382B;       /* Classic dark brown for maximum readability */
+  --text-secondary: #6B5747;     /* Soft warm brown for subtext and descriptions */
+  --text-dark: #382A1F;          /* Deepest brown for main headings */
 
   /* Fonts */
   --font-heading: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif;
-  --font-body: 'Noto Serif Devanagari', serif;
+  --font-text: 'Noto Serif Devanagari', serif;
 
-  /* Shadows */
-  --shadow-card: 0 10px 40px rgba(60, 40, 20, 0.05);
-  --shadow-subtle: 0 4px 16px rgba(60, 40, 20, 0.04);
+  /* Card Shadows */
+  --card-shadow: 0 10px 40px rgba(73, 56, 43, 0.05);
+  --box-shadow: 0 2px 12px rgba(73, 56, 43, 0.03);
 }
 
 /* ================= RESET & BASE ================= */
@@ -46,9 +44,9 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-text);
   background-color: var(--bg-page);
-  color: var(--text-dark);
+  color: var(--text-primary);
   line-height: 1.8;
   overflow-x: hidden;
   min-height: 100vh;
@@ -56,739 +54,703 @@ body {
 
 /* Subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-page);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold-subtle);
-  border-radius: 4px;
+  background: var(--gold-line);
+  border-radius: 3px;
 }
 
-/* ================= MAIN CARD CONTAINER ================= */
-.card-page-wrapper {
+/* ================= CARD PAGE WRAPPER ================= */
+.card-page-container {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 16px 80px 16px;
+  padding: 44px 16px 90px 16px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
+/* ================= TRADITIONAL IVORY DIGITAL INVITATION CARD ================= */
 .invitation-card {
   width: 100%;
-  max-width: 820px;
+  max-width: 800px;
   background-color: var(--bg-card);
-  border: 1px solid var(--gold-border);
-  border-radius: 16px;
-  box-shadow: var(--shadow-card);
-  padding: 48px 44px;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid var(--gold-antique);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: var(--card-shadow);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleCardReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Top & Bottom Delicate Line Accents */
-.card-top-ornament,
-.card-bottom-ornament {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+@keyframes gentleCardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inner Frame with Delicate Inset Hairline */
+.card-frame-inner {
+  position: relative;
+  border: 1px solid rgba(181, 154, 105, 0.4);
+  border-radius: 8px;
+  padding: 46px 42px 42px 42px;
+}
+
+/* Corner Flourishes */
+.corner-flourish {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
   opacity: 0.85;
 }
-.card-top-ornament {
-  margin-bottom: 24px;
+.corner-flourish svg {
+  width: 100%;
+  height: 100%;
 }
-.card-bottom-ornament {
-  margin-top: 36px;
-}
+.corner-tl { top: 6px; left: 6px; }
+.corner-tr { top: 6px; right: 6px; }
+.corner-bl { bottom: 6px; left: 6px; }
+.corner-br { bottom: 6px; right: 6px; }
 
-/* ================= 2. HERO SECTION ================= */
-.hero-section {
+/* ================= 1. CARD HERO / OPENING SECTION ================= */
+.card-hero-header {
   text-align: center;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--gold-border);
+  padding-bottom: 38px;
+  border-bottom: 1px solid var(--gold-line);
 }
 
-.sacred-invocations {
+.card-invocations {
   margin-bottom: 12px;
 }
 
-.invocation-line {
+.invocation-text {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  color: var(--text-maroon);
+  color: var(--text-dark);
   letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
-.invocation-line.highlight {
+.invocation-text.radhe-text {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-maroon);
+  color: var(--text-dark);
 }
 
-/* Subtle Feather Divider */
-.subtle-divider {
+/* Delicate Divider with Lotus Motif */
+.card-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   margin: 12px auto 16px auto;
-  max-width: 240px;
+  max-width: 200px;
 }
 .divider-line {
   flex: 1;
   height: 1px;
-  background-color: var(--gold-border);
+  background-color: var(--gold-line);
 }
-.feather-icon {
-  width: 50px;
-  height: 20px;
+.lotus-motif {
+  width: 38px;
+  height: 18px;
 }
 
-/* Badge & Titles */
-.saprem-badge {
+/* Tag Badge */
+.saprem-tag {
   display: inline-block;
-  background-color: var(--bg-pastel-saffron);
-  color: var(--text-maroon);
-  border: 1px solid var(--gold-subtle);
+  background-color: var(--bg-badge);
+  color: var(--text-dark);
+  border: 1px solid rgba(181, 154, 105, 0.35);
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
   padding: 3px 20px;
-  border-radius: 20px;
+  border-radius: 16px;
   margin-bottom: 14px;
   letter-spacing: 1px;
 }
 
-.main-title {
+/* Main Titles */
+.card-title {
   font-family: var(--font-heading);
-  color: var(--text-maroon);
-  font-size: 2.5rem;
+  color: var(--text-dark);
+  font-size: 2.45rem;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.sub-title {
+.card-subtitle {
   font-family: var(--font-heading);
-  color: var(--gold-dark);
+  color: var(--gold-antique);
   font-size: 1.45rem;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-/* Event Dates Pill */
-.dates-pill {
+/* Dates Banner */
+.dates-banner {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--bg-accent-soft);
-  border: 1px solid var(--gold-border);
-  color: var(--text-dark);
-  font-family: var(--font-body);
-  font-size: 1rem;
+  background-color: var(--bg-card-alt);
+  border: 1px solid var(--gold-line);
+  color: var(--text-primary);
+  font-family: var(--font-text);
+  font-size: 0.98rem;
   font-weight: 600;
-  padding: 6px 18px;
-  border-radius: 24px;
+  padding: 6px 20px;
+  border-radius: 20px;
   margin-bottom: 24px;
 }
-.dates-icon {
-  font-size: 1rem;
+.dates-symbol {
+  font-size: 0.95rem;
 }
 
-/* Naturally Blended Lord Krishna Image */
-.krishna-image-container {
-  margin: 10px auto 26px auto;
-  max-width: 440px;
+/* Devotional Artwork Container */
+.devotional-artwork-wrap {
+  margin: 10px auto 24px auto;
+  max-width: 380px;
 }
 
-.image-soft-frame {
+.artwork-frame {
   position: relative;
-  border-radius: 180px 180px 20px 20px;
+  border-radius: 180px 180px 16px 16px;
   overflow: hidden;
-  border: 1px solid var(--gold-border);
-  box-shadow: 0 8px 24px rgba(60, 40, 20, 0.06);
+  border: 1px solid var(--gold-line);
   background-color: var(--bg-card);
+  box-shadow: 0 4px 18px rgba(73, 56, 43, 0.05);
 }
 
-.peaceful-krishna-img {
+.devotional-img {
   width: 100%;
-  height: 270px;
+  height: 250px;
   object-fit: cover;
   object-position: center 20%;
   display: block;
 }
 
-/* Soft Bottom Gradient Blend into Ivory Card */
-.image-gradient-blend {
+/* Soft Edge Fade */
+.artwork-soft-fade {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45px;
+  height: 40px;
   background: linear-gradient(to bottom, transparent 0%, var(--bg-card) 100%);
   pointer-events: none;
 }
 
-/* Hero Invitation Quote */
-.hero-invite-quote {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  color: var(--text-dark);
+/* Lead Quote */
+.hero-invite-lead {
+  font-family: var(--font-text);
+  font-size: 1.08rem;
+  color: var(--text-primary);
   line-height: 1.8;
-  max-width: 580px;
+  max-width: 560px;
   margin: 0 auto 24px auto;
-  font-style: normal;
 }
 
-/* Single Simple Button */
-.hero-cta-wrap {
+/* Jump CTA Button */
+.hero-cta-box {
   display: flex;
   justify-content: center;
 }
 
-.btn-simple-primary {
+.btn-card-primary {
   display: inline-block;
-  background-color: var(--bg-card);
-  color: var(--text-maroon);
-  border: 1.5px solid var(--gold-muted);
+  background-color: var(--bg-card-alt);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-antique);
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 600;
-  padding: 10px 28px;
-  border-radius: 26px;
+  padding: 8px 26px;
+  border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(198, 161, 91, 0.15);
 }
 
-.btn-simple-primary:hover {
-  background-color: var(--bg-pastel-saffron);
-  border-color: var(--gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(198, 161, 91, 0.25);
+.btn-card-primary:hover {
+  background-color: var(--bg-badge);
+  border-color: var(--text-dark);
+  transform: translateY(-1px);
 }
 
 /* ================= SECTION HEADINGS ================= */
-.section-title-wrap {
+.section-heading-wrap {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.section-heading {
+.section-title {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: var(--text-maroon);
-  margin-bottom: 8px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
 }
 
-.simple-gold-line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--gold-muted);
+.gold-hairline {
+  width: 54px;
+  height: 1.5px;
+  background-color: var(--gold-antique);
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
-.section-desc {
-  font-family: var(--font-body);
+.section-subtitle {
+  font-family: var(--font-text);
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-top: 8px;
 }
 
-/* ================= 3. INVITATION DETAILS SECTION ================= */
-.invitation-details-section {
-  padding: 44px 0 36px 0;
-  border-bottom: 1px solid var(--gold-border);
+/* ================= 2. INVITATION MESSAGE SECTION ================= */
+.invitation-message-section {
+  padding: 40px 0 36px 0;
+  border-bottom: 1px solid var(--gold-line);
 }
 
-.invitation-prose-card {
-  background-color: var(--bg-accent-soft);
-  border: 1px solid var(--gold-border);
-  border-radius: 12px;
-  padding: 28px 32px;
+.message-body {
+  background-color: var(--bg-card-alt);
+  border: 1px solid rgba(181, 154, 105, 0.35);
+  border-radius: 10px;
+  padding: 26px 30px;
   margin-bottom: 28px;
-  box-shadow: var(--shadow-subtle);
 }
 
-.greeting-text {
+.message-salutation {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-maroon);
-  margin-bottom: 12px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
 }
 
-.message-para {
-  font-family: var(--font-body);
+.message-paragraph {
+  font-family: var(--font-text);
   font-size: 1.05rem;
   line-height: 1.85;
-  color: var(--text-dark);
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
-.message-para:last-child {
+.message-paragraph:last-child {
   margin-bottom: 0;
 }
-.message-para strong {
-  color: var(--text-maroon);
+.message-paragraph strong {
+  color: var(--text-dark);
   font-weight: 600;
 }
 
-/* Event Info Cards (Venue, Timing, Organizers) */
-.event-info-cards {
+/* Event Details Grid */
+.event-details-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 
-.info-card {
-  background-color: var(--bg-card-inner);
-  border: 1px solid var(--gold-border);
-  border-radius: 10px;
-  padding: 18px 16px;
+.detail-item {
+  background-color: var(--bg-box);
+  border: 1px solid var(--gold-line);
+  border-radius: 8px;
+  padding: 16px 18px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--box-shadow);
 }
 
-.info-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(60, 40, 20, 0.08);
-}
-
-.info-icon {
-  font-size: 1.4rem;
+.detail-icon {
+  font-size: 1.3rem;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.info-content {
+.detail-text-group {
   display: flex;
   flex-direction: column;
 }
 
-.info-label {
-  font-family: var(--font-body);
+.detail-title {
+  font-family: var(--font-text);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--gold-dark);
+  color: var(--gold-antique);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 3px;
-}
-
-.info-text {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-maroon);
-  line-height: 1.4;
-}
-
-.info-subtext {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 3px;
-  line-height: 1.4;
-}
-
-/* ================= 4. PROGRAMME DETAILS SECTION ================= */
-.programme-section {
-  padding: 44px 0 36px 0;
-  border-bottom: 1px solid var(--gold-border);
-}
-
-.days-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.day-card {
-  background-color: var(--bg-card-inner);
-  border: 1px solid var(--gold-border);
-  border-radius: 10px;
-  padding: 20px 22px;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.day-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--gold-muted);
-}
-
-.day-card.day-highlight {
-  border-left: 3px solid var(--gold-muted);
-}
-
-.day-card-header {
-  margin-bottom: 10px;
-}
-
-.day-title {
-  font-family: var(--font-heading);
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: var(--text-maroon);
   margin-bottom: 2px;
 }
 
-.day-date {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
+.detail-main {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-dark);
+  line-height: 1.35;
 }
 
-.day-tithi {
-  font-family: var(--font-body);
+.detail-sub {
+  font-family: var(--font-text);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ================= 3. EIGHT-DAY PROGRAMME SECTION ================= */
+.programme-section {
+  padding: 40px 0 34px 0;
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.programme-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.day-box {
+  background-color: var(--bg-box);
+  border: 1px solid var(--gold-line);
+  border-radius: 8px;
+  padding: 18px 20px;
+  box-shadow: var(--box-shadow);
+  transition: border-color 0.2s ease;
+}
+
+.day-box:hover {
+  border-color: var(--gold-antique);
+}
+
+.day-box-special {
+  border-left: 2.5px solid var(--gold-antique);
+}
+
+.day-box-header {
+  margin-bottom: 8px;
+}
+
+.day-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.day-date-line {
+  font-family: var(--font-text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.day-tithi-line {
+  font-family: var(--font-text);
   font-size: 0.82rem;
-  color: var(--gold-dark);
+  color: var(--gold-antique);
   font-weight: 500;
   margin-top: 2px;
 }
 
-.day-divider {
+.day-rule {
   width: 100%;
   height: 1px;
-  background-color: var(--gold-border);
-  margin: 10px 0 12px 0;
+  background-color: rgba(181, 154, 105, 0.25);
+  margin: 8px 0 10px 0;
 }
 
-.prasang-list {
+.day-prasangs {
   list-style: none;
   padding-left: 0;
 }
 
-.prasang-list li {
+.day-prasangs li {
   position: relative;
   padding-left: 14px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-  margin-bottom: 3px;
+  font-family: var(--font-text);
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+  margin-bottom: 2px;
 }
 
-.prasang-list li::before {
+.day-prasangs li::before {
   content: '•';
   position: absolute;
   left: 2px;
-  color: var(--gold-muted);
-  font-size: 1.1rem;
+  color: var(--gold-antique);
+  font-size: 1rem;
   line-height: 1;
 }
 
-.prasang-list li.special-prasang {
+.day-prasangs li.fest-highlight {
   font-weight: 600;
-  color: var(--text-maroon);
+  color: var(--text-dark);
 }
 
-/* ================= 6. FINAL INVITATION SECTION ================= */
-.final-invitation-section {
-  padding-top: 44px;
+/* ================= 4. FINAL CLOSING INVITATION ================= */
+.card-closing-footer {
+  padding-top: 40px;
   text-align: center;
 }
 
-.radha-krishna-container {
-  margin: 0 auto 24px auto;
-  max-width: 220px;
+.closing-artwork-wrap {
+  margin: 0 auto 20px auto;
+  max-width: 190px;
 }
 
-.image-soft-frame.circular-frame {
-  width: 200px;
-  height: 200px;
+.artwork-circle-frame {
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 1.5px solid var(--gold-subtle);
-  box-shadow: 0 6px 20px rgba(60, 40, 20, 0.06);
+  border: 1px solid var(--gold-line);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(73, 56, 43, 0.04);
 }
 
-.peaceful-radha-img {
+.closing-radha-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.closing-content {
-  max-width: 600px;
+.closing-text-wrap {
+  max-width: 580px;
   margin: 0 auto;
 }
 
-.closing-main-text {
+.closing-headline {
   font-family: var(--font-heading);
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: var(--text-maroon);
-  line-height: 1.3;
-  margin-bottom: 8px;
-}
-
-.closing-sub-text {
-  font-family: var(--font-body);
-  font-size: 1.12rem;
   color: var(--text-dark);
-  margin-bottom: 18px;
+  line-height: 1.3;
+  margin-bottom: 6px;
 }
 
-.sacred-chants {
+.closing-subheadline {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.sacred-chants-line {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 26px;
 }
 
-.chant-phrase {
+.chant-word {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--gold-dark);
+  color: var(--gold-antique);
 }
 
-.chant-dot {
-  color: var(--gold-subtle);
-  font-size: 0.8rem;
+.chant-symbol {
+  color: var(--gold-line);
+  font-size: 0.75rem;
 }
 
-/* Clean Sharing Buttons */
-.closing-actions {
+/* Subtle, Muted Action Buttons */
+.action-buttons-wrap {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
-.action-btn {
+.btn-card-action {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
-  border-radius: 24px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  padding: 9px 20px;
+  border-radius: 20px;
+  font-family: var(--font-text);
+  font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
+  background-color: var(--bg-card-alt);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-antique);
   transition: all 0.2s ease;
-  border: 1px solid transparent;
 }
 
-.btn-whatsapp {
-  background-color: #25D366;
-  color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.2);
-}
-.btn-whatsapp:hover {
-  background-color: #1EBE5D;
-  transform: translateY(-2px);
+.btn-card-action:hover {
+  background-color: var(--bg-badge);
+  border-color: var(--text-dark);
+  transform: translateY(-1px);
 }
 
-.btn-maps {
-  background-color: var(--bg-card);
-  color: var(--text-maroon);
-  border-color: var(--gold-muted);
-  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.05);
-}
-.btn-maps:hover {
-  background-color: var(--bg-pastel-saffron);
-  border-color: var(--gold-dark);
-  transform: translateY(-2px);
+.action-icon {
+  font-size: 1rem;
 }
 
-.action-btn-icon {
-  font-size: 1.1rem;
+/* Signature Block */
+.closing-sign-block {
+  border-top: 1px solid var(--gold-line);
+  padding-top: 18px;
 }
 
-/* Closing Signoff */
-.closing-signature {
-  border-top: 1px solid var(--gold-border);
-  padding-top: 20px;
-}
-
-.signature-label {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--gold-dark);
+.sign-caption {
+  font-family: var(--font-text);
+  font-size: 0.88rem;
+  color: var(--gold-antique);
   font-weight: 600;
   margin-bottom: 2px;
 }
 
-.signature-name {
+.sign-people {
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text-maroon);
+  color: var(--text-dark);
   margin-bottom: 2px;
 }
 
-.signature-place {
+.sign-location {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
-/* ================= 5. COMPACT, PEACEFUL MUSIC PLAYER (FIXED BOTTOM CORNER) ================= */
-.peaceful-music-player {
+/* ================= 5. COMPACT, PEACEFUL MUSIC PLAYER ================= */
+.compact-audio-widget {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background-color: rgba(255, 253, 245, 0.95);
-  border: 1px solid var(--gold-muted);
-  border-radius: 28px;
-  padding: 6px 14px 6px 8px;
+  bottom: 18px;
+  right: 18px;
+  z-index: 999;
+  background-color: rgba(255, 253, 246, 0.96);
+  border: 1px solid var(--gold-antique);
+  border-radius: 24px;
+  padding: 5px 12px 5px 6px;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 18px rgba(60, 40, 20, 0.12);
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(73, 56, 43, 0.1);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
 }
 
-.peaceful-music-player:hover {
-  box-shadow: 0 6px 24px rgba(60, 40, 20, 0.18);
-  border-color: var(--gold-dark);
-}
-
-.player-btn {
-  background-color: var(--bg-card);
-  border: 1px solid var(--gold-subtle);
+.widget-btn {
+  background-color: var(--bg-card-alt);
+  border: 1px solid var(--gold-line);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--text-maroon);
+  color: var(--text-dark);
+  font-size: 0.85rem;
   transition: all 0.2s ease;
 }
 
-.player-btn:hover {
-  background-color: var(--bg-pastel-saffron);
-  border-color: var(--gold-dark);
-  transform: scale(1.05);
+.widget-btn:hover {
+  background-color: var(--bg-badge);
+  border-color: var(--gold-antique);
 }
 
-.player-btn.toggle-play {
-  background-color: var(--bg-pastel-saffron);
-  border-color: var(--gold-muted);
-}
-
-.player-icon {
-  font-size: 0.85rem;
-  line-height: 1;
-}
-
-.player-info {
+.widget-details {
   display: flex;
   flex-direction: column;
-  padding-right: 4px;
 }
 
-.player-title {
+.widget-title {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--text-maroon);
+  color: var(--text-dark);
   line-height: 1.2;
 }
 
-.player-status {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: var(--gold-dark);
-  font-weight: 600;
+.widget-status {
+  font-family: var(--font-text);
+  font-size: 0.7rem;
+  color: var(--gold-antique);
+  font-weight: 500;
   line-height: 1.2;
 }
 
-/* ================= RESPONSIVE STYLES ================= */
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
 @media (max-width: 768px) {
-  .card-page-wrapper {
-    padding: 20px 10px 90px 10px;
+  .card-page-container {
+    padding: 16px 8px 80px 8px;
   }
 
-  .invitation-card {
-    padding: 32px 20px;
-    border-radius: 12px;
+  .card-frame-inner {
+    padding: 30px 16px 28px 16px;
   }
 
-  .main-title {
-    font-size: 2rem;
+  .card-title {
+    font-size: 1.95rem;
   }
 
-  .sub-title {
-    font-size: 1.25rem;
+  .card-subtitle {
+    font-size: 1.22rem;
   }
 
-  .krishna-image-container {
+  .devotional-artwork-wrap {
     max-width: 100%;
   }
 
-  .peaceful-krishna-img {
-    height: 220px;
+  .devotional-img {
+    height: 210px;
   }
 
-  .event-info-cards {
+  .event-details-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .days-grid {
+  .programme-cards-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .invitation-prose-card {
-    padding: 20px 18px;
+  .message-body {
+    padding: 20px 16px;
   }
 
-  .closing-main-text {
-    font-size: 1.6rem;
+  .closing-headline {
+    font-size: 1.55rem;
   }
 
-  .closing-actions {
+  .action-buttons-wrap {
     flex-direction: column;
     width: 100%;
   }
 
-  .action-btn {
+  .btn-card-action {
     width: 100%;
     justify-content: center;
   }
 
-  .peaceful-music-player {
-    bottom: 14px;
-    right: 14px;
-    padding: 5px 12px 5px 6px;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 15px;
-  }
-
-  .main-title {
-    font-size: 1.8rem;
-  }
-
-  .image-soft-frame.circular-frame {
-    width: 160px;
-    height: 160px;
+  .compact-audio-widget {
+    bottom: 12px;
+    right: 12px;
   }
 }
